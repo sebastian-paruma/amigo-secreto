@@ -24,3 +24,21 @@ function agregarAmigo() {
     // Limpiar el campo de entrada
     inputAmigo.value = "";
 }
+
+/**
+ * Función para actualizar la lista de amigos en la interfaz
+ */
+function actualizarListaAmigos() {
+    // Obtener el elemento de la lista en el HTML
+    let listaAmigos = document.getElementById("listaAmigos");
+
+    // Limpiar la lista existente para evitar duplicados
+    listaAmigos.innerHTML = "";
+
+    // Recorrer el array de amigos y agregar cada uno como un <li>
+    for (let i = 0; i < amigos.length; i++) {
+        let elementoLista = document.createElement("li"); // Crear <li>
+        elementoLista.textContent = amigos[i]; // Asignar el nombre del amigo
+        listaAmigos.appendChild(elementoLista); // Agregar <li> a la lista
+    }
+}
